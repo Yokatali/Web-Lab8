@@ -1,0 +1,13 @@
+{
+  "name": "assignment8",
+  "version": "1.0.0",
+  "description": "study programme information server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Yusuf",
+  "license": "ISC",
+  "type": "commonjs"
+}
