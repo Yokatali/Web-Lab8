@@ -68,6 +68,14 @@ app.get('/api/stats', (req, res) => {
   res.json({ requestsServed });
 });
 
+app.use((req, res) => {
+  if (req.path === '/api' || req.path.startsWith('/api/')) {
+    res.status(404).json({ error: 'Not found' });
+    return;
+  }
+  res.status(404).send('<h1>404</h1><p>Sorry, this page was not found.</p>');
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
