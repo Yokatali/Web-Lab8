@@ -3,6 +3,13 @@ import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const COURSES = [
+  { id: 1, title: 'Web Programming', credits: 6 },
+  { id: 2, title: 'Operating Systems', credits: 6 },
+  { id: 3, title: 'Data Structures', credits: 5 },
+  { id: 4, title: 'Database Systems', credits: 5 },
+];
+
 let requestsServed = 0;
 
 function requestLogger(req, res, next) {
@@ -28,6 +35,18 @@ app.get('/robots.txt', (req, res) => {
 
 app.get('/old-page', (req, res) => {
   res.redirect('/hello');
+});
+
+app.get('/api/courses', (req, res) => {
+  res.json(COURSES);
+});
+
+app.get('/api/status', (req, res) => {
+  res.json({
+    status: 'ok',
+    nodeVersion: process.version,
+    uptimeSeconds: Math.floor(process.uptime()),
+  });
 });
 
 app.listen(PORT, () => {
