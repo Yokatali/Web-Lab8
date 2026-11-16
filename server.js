@@ -1,7 +1,9 @@
+import path from 'node:path';
 import express from 'express';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const PUBLIC_DIR = path.join(import.meta.dirname, 'public');
 
 const COURSES = [
   { id: 1, title: 'Web Programming', credits: 6 },
@@ -24,6 +26,8 @@ function requestCounter(req, res, next) {
 
 app.use(requestLogger);
 app.use(requestCounter);
+
+app.use(express.static(PUBLIC_DIR));
 
 app.get('/hello', (req, res) => {
   res.type('text/plain').send("Hello from Yusuf's server");

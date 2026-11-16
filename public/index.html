@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Programming Programme</title>
+</head>
+<body>
+  <main>
+    <h1>Computer Programming Programme</h1>
+    <p>
+      This is a small information server for a made-up study programme.
+      Students learn web programming, operating systems, data structures
+      and databases over four semesters.
+    </p>
+    <p>
+      Use the buttons below to try every API route of this server.
+      The status code and the body of each response appear in the box at the bottom.
+    </p>
+
+    <section class="buttons">
+      <button data-method="GET" data-path="/api/courses">GET /api/courses</button>
+      <button data-method="GET" data-path="/api/status">GET /api/status</button>
+      <button data-method="GET" data-path="/api/headers">GET /api/headers</button>
+      <button data-method="POST" data-path="/api/subscribe">POST /api/subscribe</button>
+      <button data-method="GET" data-path="/api/admin">GET /api/admin</button>
+      <button data-method="GET" data-path="/api/stats">GET /api/stats</button>
+      <button data-method="GET" data-path="/not-a-real-page">GET /not-a-real-page</button>
+    </section>
+
+    <h2>Response</h2>
+    <pre id="output">Click a button to see the response.</pre>
+  </main>
+</body>
+</html>
